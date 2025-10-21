@@ -1,0 +1,14 @@
+{
+  "$schema": "https://smithery.ai/schema/smithery.json",
+  "name": "gumroad-mcp",
+  "description": "Access Gumroad sales, subscriptions, and product data through the Gumroad API",
+  "version": "1.0.0",
+  "config": {
+    "gumroadAccessToken": {
+      "type": "string",
+      "description": "Your Gumroad API access token (get it from https://gumroad.com/api)",
+      "required": true,
+      "secret": true
+    }
+  }
+}
