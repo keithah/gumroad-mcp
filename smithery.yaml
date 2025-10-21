@@ -1,0 +1,20 @@
+build:
+  runtime: typescript
+startCommand:
+  type: stdio
+  configSchema:
+    type: object
+    required:
+      - gumroadAccessToken
+    properties:
+      gumroadAccessToken:
+        type: string
+        description: Your Gumroad API access token. Get it from https://gumroad.com/api
+  commandFunction: |
+    (config) => ({
+      command: 'node',
+      args: ['./dist/index.js'],
+      env: {
+        GUMROAD_ACCESS_TOKEN: config.gumroadAccessToken
+      }
+    })

@@ -1,0 +1,30 @@
+{
+  "name": "gumroad-mcp",
+  "version": "1.0.0",
+  "description": "MCP server for Gumroad API - lookup subscriptions and sales",
+  "type": "module",
+  "main": "dist/index.js",
+  "bin": {
+    "gumroad-mcp": "dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "start": "node dist/index.js"
+  },
+  "keywords": [
+    "mcp",
+    "gumroad",
+    "api",
+    "subscriptions"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.4"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.2",
+    "typescript": "^5.7.2"
+  }
+}
