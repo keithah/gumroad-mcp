@@ -1,2 +1,13 @@
+runtime: container
+startCommand:
+  type: http
+  configSchema:
+    type: object
+    required:
+      - gumroadAccessToken
+    properties:
+      gumroadAccessToken:
+        type: string
+        description: Your Gumroad API access token from https://gumroad.com/api
 build:
   dockerBuildPath: ./
