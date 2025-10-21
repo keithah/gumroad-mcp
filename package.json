@@ -11,11 +11,11 @@
     ".smithery"
   ],
   "scripts": {
-    "build": "npm run build:stdio",
+    "build": "npm run build:all",
     "build:stdio": "smithery build src/index.ts --transport stdio -o .smithery/stdio/index.cjs && echo '#!/usr/bin/env node' | cat - .smithery/stdio/index.cjs > temp && mv temp .smithery/stdio/index.cjs && chmod +x .smithery/stdio/index.cjs",
     "build:shttp": "smithery build src/index.ts --transport shttp -o .smithery/shttp/index.cjs",
     "build:all": "npm run build:stdio && npm run build:shttp",
-    "prepare": "npm run build:stdio",
+    "prepare": "npm run build:all",
     "dev": "smithery dev"
   },
   "keywords": [
