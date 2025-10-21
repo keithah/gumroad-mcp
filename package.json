@@ -3,14 +3,20 @@
   "version": "1.0.0",
   "description": "MCP server for Gumroad API - lookup subscriptions and sales",
   "type": "module",
-  "main": "dist/index.js",
+  "module": "./src/index.ts",
   "bin": {
-    "gumroad-mcp": "dist/index.js"
+    "gumroad-mcp": "./.smithery/stdio/index.cjs"
   },
+  "files": [
+    ".smithery"
+  ],
   "scripts": {
-    "build": "tsc",
-    "dev": "tsc --watch",
-    "start": "node dist/index.js"
+    "build": "npm run build:stdio",
+    "build:stdio": "smithery build src/index.ts --transport stdio -o .smithery/stdio/index.cjs && echo '#!/usr/bin/env node' | cat - .smithery/stdio/index.cjs > temp && mv temp .smithery/stdio/index.cjs && chmod +x .smithery/stdio/index.cjs",
+    "build:shttp": "smithery build src/index.ts --transport shttp -o .smithery/shttp/index.cjs",
+    "build:all": "npm run build:stdio && npm run build:shttp",
+    "prepare": "npm run build:stdio",
+    "dev": "smithery dev"
   },
   "keywords": [
     "mcp",
@@ -21,9 +27,12 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "@modelcontextprotocol/sdk": "^1.0.4"
+    "@modelcontextprotocol/sdk": "^1.18.2",
+    "@smithery/sdk": "^1.6.4",
+    "zod": "^3.25.76"
   },
   "devDependencies": {
+    "@smithery/cli": "^1.4.1",
     "@types/node": "^22.10.2",
     "typescript": "^5.7.2"
   }
