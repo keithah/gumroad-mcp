@@ -1,5 +1,7 @@
 # Gumroad MCP Server
 
+[![smithery badge](https://smithery.ai/badge/@keithah/gumroad-mcp)](https://smithery.ai/server/@keithah/gumroad-mcp)
+
 A Model Context Protocol (MCP) server for the Gumroad API, enabling AI assistants to look up subscription information, sales data, and product details.
 
 ## Features
@@ -28,6 +30,14 @@ A Model Context Protocol (MCP) server for the Gumroad API, enabling AI assistant
 - `get_product` - Get details for a specific product
 
 ## Installation
+
+### Installing via Smithery
+
+To install Gumroad automatically via [Smithery](https://smithery.ai/server/@keithah/gumroad-mcp):
+
+```bash
+npx -y @smithery/cli install @keithah/gumroad-mcp
+```
 
 ### Using Smithery (Recommended)
 
